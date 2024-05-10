@@ -61,8 +61,10 @@ function ConnectScreen() {
 
   // Ask for permissions on start up
   useEffect(() => {
-    requestBTPermissions();
-    requestNotifyPermission();
+    requestBTPermissions()
+     .then(() => {
+      requestNotifyPermission();
+     })
   }, [])
 
 
